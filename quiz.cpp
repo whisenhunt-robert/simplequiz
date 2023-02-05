@@ -2,12 +2,14 @@
 #include <string>
 using namespace std;
 
+/*These creates variables for guessing in the quiz, and the total guesses correctly.*/
 int Guess;
 int Total;
 
-
+/*This creates a class called Question*/
 class Question {
     private:
+        /*These strings build the foundation of the quiz, as they allow the questions to be printed and the choices to be shown.*/
         string Question_Text;
         string Answer_1;
         string Answer_2;
@@ -57,24 +59,20 @@ void Question::askQuestion() {
         cout << "The correct answer is " << Correct_Answer << ".";
     }
 }
-
+/*This is the main function that runs the whole program.*/
 int main () {
-
-    string Name1;
-    cout << "What's your first name player 1? ";
+    /*This prompts the user to enter their name. But has no use yet until I figure things out.*/
+    string Name;
+    cout << "What's your name? ";
     cin >> Name1;
 
-    string Name2;
-    cout << "What's your first name player 2? ";
-    cin >> Name2;
+    string player;
 
-    string player1;
-    string player2;
-
+    /*These are the variables for questions 1 and 2.*/
     Question q1;
     Question q2;
 
-
+    /*These are the two questions the program is supposed to ask the user*/
     q1.setValues("what is the only function all c++ programes must contain?",
             "start*()",
             "system()",
@@ -91,10 +89,11 @@ int main () {
             2,
             10);
 
-
+    /*I believe these call the questions so that they may be shown.*/
     q1.askQuestion();
     q2.askQuestion();
 
+    /*This prints out your score once the quiz is over, and ends the quiz.*/
     cout << "your total score is " << Total << "out of 100 " ;
     cout << endl;
 }
